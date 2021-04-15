@@ -28,9 +28,18 @@ def findGamePosition():
                             False, #Normal mode (not inverse)
                             500 / skipXFast) #Iteration limit
         if(dinoPos):
-            return dinoPos
+            #return dinoPos
             break
-      
+    
+    for x in range(dinoPos[0] - 50, dinoPos[0], 1):
+        pos = scanUntil([x, dinoPos[1] - 2], #Start position
+                            [0, 1], #Skip pixels
+                            COLOR_DINOSAUR, #Searching Color
+                            False, #Normal mode (not inverse)
+                            100) #Iteration limit)
+        if(pos):
+            return pos
+            break
 
 x = findGamePosition()
 pyautogui.moveTo(x)

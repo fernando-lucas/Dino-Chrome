@@ -1,12 +1,11 @@
 from PIL import ImageGrab
 import pyautogui
 
-
-screen = ImageGrab.grab()
-
 # Indexes
 X = 0
 Y = 1
+
+screen = ImageGrab.grab()
 
 def scanUntil(start, delta, matchColor, inverted, iterLimit):
     color = None
